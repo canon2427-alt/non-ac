@@ -1,82 +1,15 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0d12">
-  <meta name="description" content="A VRChat photography portfolio — fragments of light, friendship, and imagined places.">
-  <title>non.ac — Virtual Photography</title>
-  <style>
-    :root { color-scheme: dark; --bg:#0b0d12; --ink:#f5f2e9; --muted:#aaa9a4; --line:rgba(255,255,255,.16); --accent:#c8ff5d; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
-    a { color:inherit; } img { display:block; max-width:100%; }
-    .site-header { position:fixed; inset:0 0 auto; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:1.25rem clamp(1.2rem,3vw,3rem); mix-blend-mode:difference; font-size:.73rem; letter-spacing:.18em; text-transform:uppercase; }
-    .site-header a { text-decoration:none; } .brand { font-weight:800; } .header-note { color:#d9d9d5; }
-    .hero { position:relative; min-height:100svh; display:grid; align-items:end; overflow:hidden; }
-    .hero-media,.hero-media::after { position:absolute; inset:0; }
-    .hero-media img { width:100%; height:100%; object-fit:cover; object-position:58% center; }
-    .hero-media::after { content:""; background:linear-gradient(180deg,rgba(6,8,12,.1) 0%,rgba(6,8,12,.08) 44%,rgba(6,8,12,.92) 100%),linear-gradient(90deg,rgba(6,8,12,.42),transparent 58%); }
-    .hero-copy { position:relative; z-index:1; width:min(92rem,100%); margin:0 auto; padding:9rem clamp(1.2rem,5vw,5rem) clamp(3rem,7vw,6rem); }
-    .kicker,.section-label { color:var(--accent); font:600 .72rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.22em; text-transform:uppercase; }
-    .kicker { margin:0 0 1.2rem; }
-    h1 { max-width:10ch; margin:0; font-size:clamp(4rem,11vw,10rem); font-weight:620; line-height:.82; letter-spacing:-.07em; }
-    .hero-meta { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-top:clamp(2.5rem,5vw,5rem); padding-top:1rem; border-top:1px solid var(--line); color:#d7d6d0; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; }
-    .intro { display:grid; grid-template-columns:1fr minmax(18rem,2fr); gap:clamp(2rem,8vw,9rem); width:min(84rem,calc(100% - 2.5rem)); margin:0 auto; padding:clamp(6rem,13vw,12rem) 0; }
-    .intro p { max-width:28ch; margin:0; font-size:clamp(1.9rem,4vw,4.6rem); line-height:1.08; letter-spacing:-.045em; }
-    .intro em { color:var(--muted); font-style:normal; }
-    .gallery { width:min(92rem,calc(100% - 2.5rem)); margin:0 auto; padding-bottom:10rem; }
-    .gallery-head { display:flex; justify-content:space-between; align-items:end; margin-bottom:3rem; padding-bottom:1rem; border-bottom:1px solid var(--line); }
-    .gallery-head h2 { margin:0; font-size:clamp(2rem,5vw,5rem); letter-spacing:-.05em; font-weight:580; }
-    .gallery-head span { color:var(--muted); font:.72rem/1.4 ui-monospace,monospace; letter-spacing:.14em; }
-    .works { display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1rem,2vw,2rem); }
-    figure { margin:0; grid-column:span 6; } figure.wide { grid-column:span 8; } figure.narrow { grid-column:span 4; } figure.offset { margin-top:clamp(4rem,10vw,10rem); }
-    .work-button { position:relative; display:block; width:100%; padding:0; overflow:hidden; border:0; background:#171a20; color:inherit; cursor:zoom-in; }
-    .work-button img { width:100%; height:auto; transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease; }
-    .work-button::after { content:"View"; position:absolute; right:1rem; bottom:1rem; padding:.55rem .7rem; background:rgba(7,9,13,.72); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(8px); font:.65rem/1 ui-monospace,monospace; letter-spacing:.12em; text-transform:uppercase; opacity:0; transform:translateY(.5rem); transition:.3s ease; }
-    .work-button:hover img { transform:scale(1.018); filter:saturate(1.05); } .work-button:hover::after,.work-button:focus-visible::after { opacity:1; transform:none; }
-    figcaption { display:flex; justify-content:space-between; gap:1rem; padding-top:.85rem; font-size:.75rem; letter-spacing:.11em; text-transform:uppercase; } figcaption span:last-child { color:var(--muted); }
-    .site-footer { display:grid; grid-template-columns:1fr auto; align-items:end; gap:2rem; padding:clamp(2rem,4vw,4rem); border-top:1px solid var(--line); }
-    .footer-wordmark { margin:0; font-size:clamp(4rem,16vw,14rem); line-height:.72; letter-spacing:-.09em; font-weight:750; }
-    .footer-meta { text-align:right; color:var(--muted); font:.7rem/1.7 ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; }
-    dialog { width:100vw; height:100svh; max-width:none; max-height:none; margin:0; padding:0; border:0; background:rgba(5,6,9,.96); color:var(--ink); }
-    dialog::backdrop { background:#050609; } .lightbox-inner { height:100%; display:grid; place-items:center; padding:clamp(1rem,4vw,4rem); }
-    .lightbox-img { max-width:100%; max-height:calc(100svh - 7rem); width:auto; height:auto; object-fit:contain; }
-    .lightbox-title { position:fixed; left:1.25rem; bottom:1rem; margin:0; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
-    .lightbox-close { position:fixed; top:1rem; right:1rem; width:2.8rem; height:2.8rem; border:1px solid var(--line); border-radius:50%; background:rgba(0,0,0,.35); color:white; cursor:pointer; font-size:1.2rem; }
-    @media (max-width:760px) { .header-note{display:none}.hero-meta{align-items:start;flex-direction:column}.intro{grid-template-columns:1fr}figure,figure.wide,figure.narrow{grid-column:1/-1}figure.offset{margin-top:2rem}.works{gap:4rem}.site-footer{grid-template-columns:1fr}.footer-meta{text-align:left} }
-    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.work-button img,.work-button::after{transition:none} }
-  </style>
-</head>
-<body>
-  <header class="site-header"><a class="brand" href="#top">non.ac</a><span class="header-note">Virtual photography · 2024—2026</span><a href="#works">Selected works ↓</a></header>
-  <main id="top">
-    <section class="hero"><div class="hero-media" aria-hidden="true"><img src="assets/03-fireworks.webp" alt="" fetchpriority="high"></div><div class="hero-copy"><p class="kicker">Photographs from imagined places</p><h1>Elsewhere, together.</h1><div class="hero-meta"><span>VRChat photography archive</span><span>Light · Presence · Memory</span></div></div></section>
-    <section class="intro" aria-label="About this collection"><span class="section-label">01 / Statement</span><p>存在しない場所で、<br><em>確かにあった時間。</em></p></section>
-    <section class="gallery" id="works"><div class="gallery-head"><h2>Selected works</h2><span>12 photographs<br>2024—2026</span></div><div class="works">
-      <figure class="wide"><button class="work-button" data-full="assets/01-blue-connection.webp" data-title="Blue Connection — 2026"><img src="assets/01-blue-connection-thumb.webp" alt="青い光の中で寄り添う二人" loading="lazy"></button><figcaption><span>Blue Connection</span><span>2026</span></figcaption></figure>
-      <figure class="narrow offset"><button class="work-button" data-full="assets/02-flowerbed.webp" data-title="Flowerbed — 2026"><img src="assets/02-flowerbed-thumb.webp" alt="花のそばに横たわる白髪の人物" loading="lazy"></button><figcaption><span>Flowerbed</span><span>2026</span></figcaption></figure>
-      <figure class="narrow"><button class="work-button" data-full="assets/03-fireworks.webp" data-title="Fireworks, Quietly — 2026"><img src="assets/03-fireworks-thumb.webp" alt="花火を見つめる横顔" loading="lazy"></button><figcaption><span>Fireworks, Quietly</span><span>2026</span></figcaption></figure>
-      <figure class="wide offset"><button class="work-button" data-full="assets/04-afterglow.webp" data-title="Afterglow — 2025"><img src="assets/04-afterglow-thumb.webp" alt="夕暮れの橋と人物の横顔" loading="lazy"></button><figcaption><span>Afterglow</span><span>2025</span></figcaption></figure>
-      <figure class="wide"><button class="work-button" data-full="assets/05-green-memory.webp" data-title="Green Memory — 2025"><img src="assets/05-green-memory-thumb.webp" alt="緑を背景にした黒髪の人物" loading="lazy"></button><figcaption><span>Green Memory</span><span>2025</span></figcaption></figure>
-      <figure class="narrow offset"><button class="work-button" data-full="assets/06-spring-voice.webp" data-title="Spring Voice — 2025"><img src="assets/06-spring-voice-thumb.webp" alt="花畑で微笑む人物" loading="lazy"></button><figcaption><span>Spring Voice</span><span>2025</span></figcaption></figure>
-      <figure class="narrow"><button class="work-button" data-full="assets/07-seaside.webp" data-title="Seaside — 2025"><img src="assets/07-seaside-thumb.webp" alt="青い海辺に立つ人物" loading="lazy"></button><figcaption><span>Seaside</span><span>2025</span></figcaption></figure>
-      <figure class="wide offset"><button class="work-button" data-full="assets/08-open-sky.webp" data-title="Open Sky — 2025"><img src="assets/08-open-sky-thumb.webp" alt="開けた空の下で座る人物" loading="lazy"></button><figcaption><span>Open Sky</span><span>2025</span></figcaption></figure>
-      <figure class="wide"><button class="work-button" data-full="assets/09-autumn-light.webp" data-title="Autumn Light — 2024"><img src="assets/09-autumn-light-thumb.webp" alt="秋色の光に包まれた人物" loading="lazy"></button><figcaption><span>Autumn Light</span><span>2024</span></figcaption></figure>
-      <figure class="narrow offset"><button class="work-button" data-full="assets/10-moonkeeper.webp" data-title="Moonkeeper — 2024"><img src="assets/10-moonkeeper-thumb.webp" alt="月を手に載せた夜の人物" loading="lazy"></button><figcaption><span>Moonkeeper</span><span>2024</span></figcaption></figure>
-      <figure class="narrow"><button class="work-button" data-full="assets/11-platform.webp" data-title="Platform — 2024"><img src="assets/11-platform-thumb.webp" alt="駅のホームに立つ人物" loading="lazy"></button><figcaption><span>Platform</span><span>2024</span></figcaption></figure>
-      <figure class="wide offset"><button class="work-button" data-full="assets/12-sunset-swing.webp" data-title="Sunset Swing — 2024"><img src="assets/12-sunset-swing-thumb.webp" alt="夕暮れのブランコに座る人物" loading="lazy"></button><figcaption><span>Sunset Swing</span><span>2024</span></figcaption></figure>
-    </div></section>
-  </main>
-  <footer class="site-footer"><p class="footer-wordmark">non.ac</p><div class="footer-meta">Virtual photography<br>© <span id="year"></span></div></footer>
-  <dialog id="lightbox" aria-label="Photograph viewer"><div class="lightbox-inner"><img class="lightbox-img" alt=""></div><p class="lightbox-title"></p><button class="lightbox-close" type="button" aria-label="Close">×</button></dialog>
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const dialog=document.getElementById('lightbox'),image=dialog.querySelector('.lightbox-img'),title=dialog.querySelector('.lightbox-title');
-    document.querySelectorAll('.work-button').forEach(button=>button.addEventListener('click',()=>{image.src=button.dataset.full;image.alt=button.querySelector('img').alt;title.textContent=button.dataset.title;dialog.showModal()}));
-    dialog.querySelector('.lightbox-close').addEventListener('click',()=>dialog.close());
-    dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
-  </script>
-</body>
-</html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="non.ac — VRChat default photography collection."><title>Default photographs — non.ac</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><a class="brand" href="index.html">non.ac</a><nav class="primary-nav" aria-label="Photography collections"><a href="index.html" aria-current="page">Default</a><a href="edited.html">Edited</a></nav><span class="header-count">10 photographs · 2026</span></header>
+<main><section class="intro"><div><span class="eyebrow">Collection 01 / Default</span><h1>As<br>Captured.</h1></div><div class="intro-copy"><strong>デフォルト写真</strong><p>その瞬間に写った光、距離、表情。<br>手を加えずに残した10枚。</p></div></section>
+<section class="featured" aria-label="Featured photograph"><div class="featured-stage"><button data-full="assets/default-09.webp" data-title="Looking Up — 09 Sep 2026"><img src="assets/default-09.webp" alt="こちらを見上げる金髪の人物" fetchpriority="high"></button></div><div class="featured-meta"><span>Looking Up</span><span>09 Sep 2026 · Featured</span></div></section>
+<section class="gallery"><div class="gallery-head"><h2>Default photographs</h2><span>09 more frames</span></div><div class="works">
+<figure><button class="work-button" data-full="assets/default-01.webp" data-title="Together — Archive"><img src="assets/default-01-thumb.webp" alt="笑顔で集まるVRChatの仲間たち" loading="lazy"></button><figcaption><span>Together</span><span>Archive</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-02.webp" data-title="Blue Dialogue — 01 Sep 2026"><img src="assets/default-02-thumb.webp" alt="青い光の階段で向き合う二人" loading="lazy"></button><figcaption><span>Blue Dialogue</span><span>01 Sep 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-03.webp" data-title="Winter Gaze — 03 Sep 2026"><img src="assets/default-03-thumb.webp" alt="青白い光の中の人物のクローズアップ" loading="lazy"></button><figcaption><span>Winter Gaze</span><span>03 Sep 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-04.webp" data-title="Soft Distance — 03 Sep 2026"><img src="assets/default-04-thumb.webp" alt="柔らかな青い光の人物" loading="lazy"></button><figcaption><span>Soft Distance</span><span>03 Sep 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-05.webp" data-title="Between Friends — 22 Aug 2026"><img src="assets/default-05-thumb.webp" alt="屋外で寄り添う二人" loading="lazy"></button><figcaption><span>Between Friends</span><span>22 Aug 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-06.webp" data-title="Three of Us — 26 Aug 2026"><img src="assets/default-06-thumb.webp" alt="カメラに向かう三人" loading="lazy"></button><figcaption><span>Three of Us</span><span>26 Aug 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-07.webp" data-title="Afternoon Rest — 28 Aug 2026"><img src="assets/default-07-thumb.webp" alt="室内でくつろぐ二人" loading="lazy"></button><figcaption><span>Afternoon Rest</span><span>28 Aug 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-08.webp" data-title="Signal Light — 12 Sep 2026"><img src="assets/default-08-thumb.webp" alt="赤と青の光に照らされた人物" loading="lazy"></button><figcaption><span>Signal Light</span><span>12 Sep 2026</span></figcaption></figure>
+<figure><button class="work-button" data-full="assets/default-10.webp" data-title="Morning Tea — 09 Sep 2026"><img src="assets/default-10-thumb.webp" alt="飲み物を手に微笑む人物" loading="lazy"></button><figcaption><span>Morning Tea</span><span>09 Sep 2026</span></figcaption></figure>
+</div></section></main><footer class="site-footer"><p class="footer-mark">non.ac</p><div class="footer-note">Virtual photography<br>© <span data-year></span></div></footer><dialog id="lightbox" aria-label="Photograph viewer"><div class="lightbox-inner"><img class="lightbox-img" alt=""></div><p class="lightbox-title"></p><button class="lightbox-close" type="button" aria-label="Close">×</button></dialog><script src="app.js"></script></body></html>
