@@ -17,10 +17,10 @@ if(previews.length){
       if(!items.length)continue;
       const featured=items.find(item=>item.featured)||items[0];
       const image=document.createElement('img');
-      image.src=featured.thumb;
+      image.src=featured.thumb||featured.images?.[0]?.thumb||'';
       image.alt=featured.alt||`${card.dataset.collectionPreview} コレクションの代表画像`;
       card.prepend(image);
-      card.querySelector('small').textContent=`${items.length.toString().padStart(2,'0')} photographs`;
+      card.querySelector('small').textContent=`${items.length.toString().padStart(2,'0')} ${card.dataset.collectionPreview==='figure'?'series':'photographs'}`;
     }
   }).catch(()=>{});
 }
