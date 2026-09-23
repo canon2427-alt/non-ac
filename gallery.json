@@ -14,7 +14,7 @@
       "full": "assets/default-01.webp",
       "thumb": "assets/default-01-thumb.webp",
       "alt": "笑顔で集まるVRChatの仲間たち",
-      "featured": false
+      "featured": true
     },
     {
       "id": "default-02",
@@ -274,7 +274,7 @@
       "full": "assets/default-20260923150147.webp",
       "thumb": "assets/default-20260923150147-thumb.webp",
       "alt": "",
-      "featured": true
+      "featured": false
     }
   ]
 }
