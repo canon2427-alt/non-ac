@@ -14,6 +14,8 @@ const items=data.items.filter(item=>item.collection===collection);
 const featured=items.find(item=>item.featured)||items[0];
 const galleryItems=items.filter(item=>item.id!==featured?.id);
 const tags=[...new Set(items.flatMap(item=>item.tags))].sort((a,b)=>a.localeCompare(b,'ja'));
+featuredRoot.hidden=!featured;
+if(!items.length)filtersRoot.closest('.tag-panel').hidden=true;
 
 if(featured){
   featuredRoot.innerHTML=`<div class="featured-stage"><button data-full="${escapeHtml(featured.full)}" data-title="${escapeHtml(featured.title)}"><img src="${escapeHtml(featured.thumb)}" alt="${escapeHtml(featured.alt)}" fetchpriority="high"></button></div><div class="featured-meta"><span>${escapeHtml(featured.title)}</span><span>Featured</span></div><div class="item-tags">${featured.tags.map(tag=>`<span class="item-tag">${escapeHtml(tag)}</span>`).join('')}</div>`;
@@ -23,7 +25,7 @@ filtersRoot.innerHTML=[`<button class="tag-filter" type="button" data-tag="" ari
 
 const render=tag=>{
   const visible=tag?galleryItems.filter(item=>item.tags.includes(tag)):galleryItems;
-  galleryRoot.innerHTML=visible.length?visible.map(card).join(''):'<p class="gallery-empty">該当する写真はありません。</p>';
+  galleryRoot.innerHTML=visible.length?visible.map(card).join(''):`<p class="gallery-empty">${items.length?'該当する写真はありません。':'写真はまだありません。'}</p>`;
   countRoot.textContent=`${visible.length.toString().padStart(2,'0')} photographs`;
   filtersRoot.querySelectorAll('[data-tag]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.tag===tag)));
 };
