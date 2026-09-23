@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="description" content="non.ac — 所持アバター一覧と購入日。">
+  <title>Avatars — non.ac</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="avatars.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">non.ac</a>
+    <nav class="primary-nav" aria-label="Site navigation"><a href="index.html">About</a><a href="avatars.html" aria-current="page">Avatars</a><a href="default.html">Default</a><a href="edited.html">Edited</a></nav>
+    <span class="header-count">Avatar archive</span>
+  </header>
+  <main class="avatar-main">
+    <section class="avatar-hero">
+      <div class="avatar-hero-top"><span class="eyebrow">Personal archive / VRChat</span><a href="index.html" class="avatar-back">← About</a></div>
+      <h1>Avatars<span>.</span></h1>
+      <div class="avatar-intro"><p>所持アバター一覧</p><p>購入日は提供された一覧画像の記載をそのまま掲載しています。販売ページは現在確認できた商品本体のみリンクしています。</p></div>
+    </section>
+    <section class="avatar-directory" aria-label="所持アバター一覧">
+      <div class="avatar-controls">
+        <label for="avatar-search">名前で探す<input id="avatar-search" type="search" placeholder="アバター名を入力" autocomplete="off"></label>
+        <label for="avatar-year">購入年<select id="avatar-year"><option value="">すべての年</option></select></label>
+        <span id="avatar-count" aria-live="polite">100 avatars</span>
+      </div>
+      <div id="avatar-list"><p class="avatar-loading">一覧を読み込み中…</p></div>
+      <p class="avatar-note">「リンク未確認」は、販売ページの消失・非公開、または同名商品との判別ができなかったものです。リンク先の販売状況は変更される場合があります。</p>
+    </section>
+  </main>
+  <footer class="site-footer"><p class="footer-mark">non.ac</p><div class="footer-note">Virtual photography<br>© <span data-year></span></div></footer>
+  <script type="module" src="avatars.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
