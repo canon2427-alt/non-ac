@@ -1,4 +1,18 @@
 {
   "version": 1,
-  "items": []
+  "items": [
+    {
+      "id": "default-20260923154039",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "愛莉"
+      ],
+      "full": "assets/default-20260923154039.webp",
+      "thumb": "assets/default-20260923154039-thumb.webp",
+      "alt": "",
+      "featured": true
+    }
+  ]
 }
