@@ -234,6 +234,19 @@
       "thumb": "assets/default-20260923162358-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923162428",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "エク"
+      ],
+      "full": "assets/default-20260923162428.webp",
+      "thumb": "assets/default-20260923162428-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
