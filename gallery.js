@@ -16,7 +16,7 @@ const galleryItems=items.filter(item=>item.id!==featured?.id);
 const tags=[...new Set(items.flatMap(item=>item.tags))].sort((a,b)=>a.localeCompare(b,'ja'));
 
 if(featured){
-  featuredRoot.innerHTML=`<div class="featured-stage"><button data-full="${escapeHtml(featured.full)}" data-title="${escapeHtml(featured.title)}"><img src="${escapeHtml(featured.full)}" alt="${escapeHtml(featured.alt)}" fetchpriority="high"></button></div><div class="featured-meta"><span>${escapeHtml(featured.title)}</span><span>Featured</span></div><div class="item-tags">${featured.tags.map(tag=>`<span class="item-tag">${escapeHtml(tag)}</span>`).join('')}</div>`;
+  featuredRoot.innerHTML=`<div class="featured-stage"><button data-full="${escapeHtml(featured.full)}" data-title="${escapeHtml(featured.title)}"><img src="${escapeHtml(featured.thumb)}" alt="${escapeHtml(featured.alt)}" fetchpriority="high"></button></div><div class="featured-meta"><span>${escapeHtml(featured.title)}</span><span>Featured</span></div><div class="item-tags">${featured.tags.map(tag=>`<span class="item-tag">${escapeHtml(tag)}</span>`).join('')}</div>`;
 }
 
 filtersRoot.innerHTML=[`<button class="tag-filter" type="button" data-tag="" aria-pressed="true">すべて</button>`,...tags.map(tag=>`<button class="tag-filter" type="button" data-tag="${escapeHtml(tag)}" aria-pressed="false">${escapeHtml(tag)}</button>`)].join('');
