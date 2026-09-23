@@ -137,6 +137,20 @@
       "thumb": "assets/default-20260923161255-thumb.webp",
       "alt": "ショコラちゃん発売記念集合写真",
       "featured": false
+    },
+    {
+      "id": "default-20260923161533",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "サナティア",
+        "レグニア"
+      ],
+      "full": "assets/default-20260923161533.webp",
+      "thumb": "assets/default-20260923161533-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
