@@ -164,6 +164,19 @@
       "thumb": "assets/default-20260923161805-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "edited-20260923161937",
+      "collection": "edited",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "プラム"
+      ],
+      "full": "assets/edited-20260923161937.webp",
+      "thumb": "assets/edited-20260923161937-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
