@@ -325,6 +325,21 @@
       "thumb": "assets/default-20260923173901-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "special-20260923181926",
+      "collection": "special",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "エク",
+        "ミルフィ"
+      ],
+      "full": "assets/special-20260923181926.webp",
+      "thumb": "assets/special-20260923181926-thumb.webp",
+      "alt": "",
+      "featured": false,
+      "sourceUrl": "https://x.com/N_yamaVRC/status/2096733340036632576?s=20"
     }
   ]
 }
