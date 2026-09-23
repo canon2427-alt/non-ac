@@ -6,13 +6,13 @@
 .lightbox-img {
   width: auto;
   height: auto;
-  max-width: min(86vw, 1440px);
+  max-width: min(100%, 86vw, 1440px);
   max-height: min(78vh, 900px);
 }
 
 @media (max-width: 760px) {
   .lightbox-img {
-    max-width: 88vw;
+    max-width: min(100%, 88vw);
     max-height: 75vh;
   }
 }
