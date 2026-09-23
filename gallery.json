@@ -117,6 +117,26 @@
       "thumb": "assets/default-20260923160901-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923161255",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "ショコラ",
+        "シフォン",
+        "ライム",
+        "カリン",
+        "ミルク",
+        "あまなつ",
+        "ラスク",
+        "ミント"
+      ],
+      "full": "assets/default-20260923161255.webp",
+      "thumb": "assets/default-20260923161255-thumb.webp",
+      "alt": "ショコラちゃん発売記念集合写真",
+      "featured": false
     }
   ]
 }
