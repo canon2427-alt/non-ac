@@ -369,7 +369,7 @@
     {
       "id": "figure-20260923183856-kaiouu",
       "collection": "figure",
-      "title": "sサナティア",
+      "title": "サナティア",
       "date": "24 Sept 2026",
       "tags": [
         "サナティア"
@@ -406,7 +406,8 @@
           "thumb": "assets/figure-20260923183856-kaiouu-06-thumb.webp",
           "alt": ""
         }
-      ]
+      ],
+      "alt": ""
     }
   ]
 }
