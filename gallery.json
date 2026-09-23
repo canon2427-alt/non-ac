@@ -205,6 +205,20 @@
       "thumb": "assets/default-20260923162222-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923162250",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "まよ",
+        "Sio"
+      ],
+      "full": "assets/default-20260923162250.webp",
+      "thumb": "assets/default-20260923162250-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
