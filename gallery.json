@@ -266,6 +266,20 @@
       "thumb": "assets/default-20260923162557-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923162642",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "しなの",
+        "まよ"
+      ],
+      "full": "assets/default-20260923162642.webp",
+      "thumb": "assets/default-20260923162642-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
