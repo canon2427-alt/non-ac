@@ -1,0 +1,18 @@
+.lightbox-inner {
+  height: 100%;
+  padding: clamp(24px, 5vh, 64px) clamp(16px, 5vw, 80px);
+}
+
+.lightbox-img {
+  width: auto;
+  height: auto;
+  max-width: min(86vw, 1440px);
+  max-height: min(78vh, 900px);
+}
+
+@media (max-width: 760px) {
+  .lightbox-img {
+    max-width: 88vw;
+    max-height: 75vh;
+  }
+}
