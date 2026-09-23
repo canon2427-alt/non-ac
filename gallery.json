@@ -26,19 +26,6 @@
       "thumb": "assets/default-20260923154613-thumb.webp",
       "alt": "",
       "featured": true
-    },
-    {
-      "id": "default-20260923155135",
-      "collection": "default",
-      "title": "Untitled",
-      "date": "24 Sept 2026",
-      "tags": [
-        "愛莉"
-      ],
-      "full": "assets/default-20260923155135.webp",
-      "thumb": "assets/default-20260923155135-thumb.webp",
-      "alt": "",
-      "featured": false
     }
   ]
 }
