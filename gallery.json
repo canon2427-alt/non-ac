@@ -104,6 +104,19 @@
       "thumb": "assets/edited-20260923160424-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923160901",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "サナティア"
+      ],
+      "full": "assets/default-20260923160901.webp",
+      "thumb": "assets/default-20260923160901-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
