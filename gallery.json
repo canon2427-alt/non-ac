@@ -248,6 +248,19 @@
       "thumb": "assets/edited-20260923144715-thumb.webp",
       "alt": "test",
       "featured": false
+    },
+    {
+      "id": "edited-20260923145029",
+      "collection": "edited",
+      "title": "test",
+      "date": "2025/08/15 (金) - 2025/08/16 (土)",
+      "tags": [
+        "しなの"
+      ],
+      "full": "assets/edited-20260923145029.webp",
+      "thumb": "assets/edited-20260923145029-thumb.webp",
+      "alt": "test",
+      "featured": false
     }
   ]
 }
