@@ -17,7 +17,7 @@
     {
       "id": "default-20260923154613",
       "collection": "default",
-      "title": "Untitled",
+      "title": "",
       "date": "24 Sept 2026",
       "tags": [
         "エク"
@@ -25,7 +25,7 @@
       "full": "assets/default-20260923154613.webp",
       "thumb": "assets/default-20260923154613-thumb.webp",
       "alt": "",
-      "featured": false
+      "featured": true
     }
   ]
 }
