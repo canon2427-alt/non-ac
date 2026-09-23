@@ -6,8 +6,11 @@
 .special-entry h2,.figure-entry h2{margin:0;font:400 clamp(34px,5vw,70px)/1.05 Georgia,serif;letter-spacing:-.045em}
 .entry-index{color:var(--accent);font-size:11px;letter-spacing:.18em}
 .special-entry-body{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,.6fr);gap:clamp(24px,4vw,68px);align-items:start}
+.special-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.special-photo-grid[data-count="1"]{grid-template-columns:1fr}
 .special-photo{display:block;width:100%;border:0;padding:0;background:#111;cursor:zoom-in}
-.special-photo img{display:block;width:100%;height:auto;max-height:900px;object-fit:contain}
+.special-photo img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover}
+.special-photo-grid[data-count="1"] .special-photo img{max-height:900px;aspect-ratio:auto;object-fit:contain}
 .special-source{padding:20px;border:1px solid var(--line);background:var(--panel)}
 .special-source-label{display:block;margin-bottom:20px;color:var(--accent);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 .special-source blockquote{margin:0!important;max-width:100%!important}
@@ -19,7 +22,7 @@
 .figure-cover img:only-of-type{grid-column:1/-1}
 .figure-cover img:nth-of-type(2):last-of-type{grid-row:1/3}
 .figure-cover span{position:absolute;right:18px;bottom:18px;padding:9px 12px;background:rgba(0,0,0,.75);font-size:11px;letter-spacing:.1em}
-#figure-viewer{width:100vw;height:100vh;max-width:none;max-height:none;border:0;padding:0;background:rgba(7,7,8,.97);color:var(--ink)}
+#figure-viewer,#special-viewer{width:100vw;height:100vh;max-width:none;max-height:none;border:0;padding:0;background:rgba(7,7,8,.97);color:var(--ink)}
 .figure-viewer-body{display:grid;grid-template-columns:64px minmax(0,1fr) 64px;align-items:center;gap:12px;height:calc(100% - 72px);padding:72px 16px 10px}
 .figure-viewer-body img{display:block;max-width:min(100%,86vw,1440px);max-height:78vh;margin:auto;object-fit:contain}
 .figure-step{border:0;background:transparent;color:var(--ink);font-size:44px;cursor:pointer}

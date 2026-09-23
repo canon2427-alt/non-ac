@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="gallery.css">
   <link rel="stylesheet" href="lightbox-size.css">
-  <link rel="stylesheet" href="site-additions.css">
+  <link rel="stylesheet" href="site-additions.css?v=20260924-multi">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">non.ac</a><nav class="primary-nav" aria-label="Site navigation"><a href="index.html">About</a><a href="default.html">Default</a><a href="edited.html">Edited</a><a href="special.html" aria-current="page">Special</a><a href="figure.html">Figure</a></nav><span class="header-count">Special collection</span></header>
@@ -18,7 +18,7 @@
     <section class="special-gallery" aria-label="Special photographs" data-special-gallery><p class="gallery-empty">読み込み中…</p></section>
   </main>
   <footer class="site-footer"><p class="footer-mark">non.ac</p><div class="footer-note">Virtual photography<br>© <span data-year></span></div></footer>
-  <dialog id="lightbox" aria-label="Photograph viewer"><div class="lightbox-inner"><img class="lightbox-img" alt=""></div><p class="lightbox-title"></p><button class="lightbox-close" type="button" aria-label="Close">×</button></dialog>
-  <script type="module" src="special.js"></script><script src="app.js"></script>
+  <dialog id="special-viewer" aria-label="Special photograph viewer"><button class="lightbox-close" type="button" aria-label="閉じる">×</button><div class="figure-viewer-body"><button class="figure-step" type="button" data-step="-1" aria-label="前の写真">‹</button><img alt=""><button class="figure-step" type="button" data-step="1" aria-label="次の写真">›</button></div><p class="figure-viewer-caption"></p></dialog>
+  <script type="module" src="special.js?v=20260924-multi"></script><script src="app.js"></script>
 </body>
 </html>

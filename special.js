@@ -1,4 +1,25 @@
 const root=document.querySelector('[data-special-gallery]');
+const viewer=document.querySelector('#special-viewer');
+const viewerImage=viewer.querySelector('img');
+const viewerCaption=viewer.querySelector('.figure-viewer-caption');
+let active=null,position=0;
+
+function showPhoto(){
+  const image=active.images[position];
+  viewerImage.src=image.full;viewerImage.alt=image.alt||`${active.title||'Special'} ${position+1}`;
+  viewerCaption.textContent=`${active.title||'Untitled'} — ${position+1} / ${active.images.length}`;
+  viewer.querySelector('[data-step="-1"]').disabled=position===0;
+  viewer.querySelector('[data-step="1"]').disabled=position===active.images.length-1;
+}
+
+viewer.querySelector('.lightbox-close').addEventListener('click',()=>viewer.close());
+viewer.querySelectorAll('[data-step]').forEach(button=>button.addEventListener('click',()=>{position+=Number(button.dataset.step);showPhoto()}));
+viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close()});
+document.addEventListener('keydown',event=>{
+  if(!viewer.open)return;
+  if(event.key==='ArrowLeft'&&position>0){position--;showPhoto()}
+  if(event.key==='ArrowRight'&&position<active.images.length-1){position++;showPhoto()}
+});
 
 function sourceUrl(value){
   try{
@@ -28,9 +49,15 @@ try{
     const head=document.createElement('div');head.className='special-entry-head';
     head.append(text('h2',item.title||'Untitled'),text('span',String(index+1).padStart(2,'0'),'entry-index'));
     const body=document.createElement('div');body.className='special-entry-body';
-    const photo=document.createElement('button');photo.type='button';photo.className='special-photo';
-    photo.dataset.full=item.full;photo.dataset.title=item.title||'Untitled';
-    const image=document.createElement('img');image.src=item.thumb;image.alt=item.alt||item.title||'Special photograph';image.loading='lazy';photo.append(image);
+    const images=Array.isArray(item.images)?item.images:[{full:item.full,thumb:item.thumb,alt:item.alt}];
+    const grid=document.createElement('div');grid.className='special-photo-grid';grid.dataset.count=String(images.length);
+    for(const [photoIndex,image] of images.entries()){
+      const photo=document.createElement('button');photo.type='button';photo.className='special-photo';
+      photo.setAttribute('aria-label',`${item.title||'Special'}の写真${photoIndex+1}を拡大`);
+      const thumbnail=document.createElement('img');thumbnail.src=image.thumb;thumbnail.alt=image.alt||item.title||'Special photograph';thumbnail.loading='lazy';photo.append(thumbnail);
+      photo.addEventListener('click',()=>{active={title:item.title,images};position=photoIndex;showPhoto();viewer.showModal()});
+      grid.append(photo);
+    }
     const source=document.createElement('aside');source.className='special-source';source.append(text('span','Original post / X','special-source-label'));
     const url=sourceUrl(item.sourceUrl);
     if(url){
@@ -38,7 +65,7 @@ try{
       const anchor=document.createElement('a');anchor.href=url;anchor.textContent='Xの引用元ポストを見る';quote.append(anchor);source.append(quote);
       const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.className='special-source-link';link.textContent='元のポストを開く ↗';source.append(link);
     }else source.append(text('p','引用元ポストは確認できません。'));
-    body.append(photo,source);article.append(head,body);
+    body.append(grid,source);article.append(head,body);
     if(item.tags?.length){const tags=document.createElement('div');tags.className='entry-tags';for(const tag of item.tags)tags.append(text('span',`#${tag}`));article.append(tags)}
     root.append(article);
   }
