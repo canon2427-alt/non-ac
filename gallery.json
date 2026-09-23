@@ -12,6 +12,19 @@
       "full": "assets/edited-20260923154434.webp",
       "thumb": "assets/edited-20260923154434-thumb.webp",
       "alt": "",
+      "featured": false
+    },
+    {
+      "id": "edited-20260923154536",
+      "collection": "edited",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "エク"
+      ],
+      "full": "assets/edited-20260923154536.webp",
+      "thumb": "assets/edited-20260923154536-thumb.webp",
+      "alt": "",
       "featured": true
     }
   ]
