@@ -329,7 +329,7 @@
     {
       "id": "special-20260923181926",
       "collection": "special",
-      "title": "Untitled",
+      "title": "",
       "date": "24 Sept 2026",
       "tags": [
         "エク",
@@ -338,7 +338,7 @@
       "full": "assets/special-20260923181926.webp",
       "thumb": "assets/special-20260923181926-thumb.webp",
       "alt": "",
-      "featured": false,
+      "featured": true,
       "sourceUrl": "https://x.com/N_yamaVRC/status/2096733340036632576?s=20"
     },
     {
