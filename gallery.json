@@ -247,6 +247,25 @@
       "thumb": "assets/default-20260923162428-thumb.webp",
       "alt": "",
       "featured": false
+    },
+    {
+      "id": "default-20260923162557",
+      "collection": "default",
+      "title": "Untitled",
+      "date": "24 Sept 2026",
+      "tags": [
+        "シフォン",
+        "ライム",
+        "カリン",
+        "あまなつ",
+        "ミルク",
+        "ラスク",
+        "ミント"
+      ],
+      "full": "assets/default-20260923162557.webp",
+      "thumb": "assets/default-20260923162557-thumb.webp",
+      "alt": "",
+      "featured": false
     }
   ]
 }
