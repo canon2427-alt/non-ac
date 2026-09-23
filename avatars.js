@@ -1,4 +1,4 @@
-import {avatars} from './avatars-data.js';
+import {avatars} from './avatars-data.js?v=20260924-u';
 
 const list=document.querySelector('#avatar-list');
 const search=document.querySelector('#avatar-search');
