@@ -1,15 +1,24 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="non.ac — VRChat default photography collection."><title>Default photographs — non.ac</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="site-header"><a class="brand" href="index.html">non.ac</a><nav class="primary-nav" aria-label="Site navigation"><a href="index.html">About</a><a href="default.html" aria-current="page">Default</a><a href="edited.html">Edited</a></nav><span class="header-count">10 photographs · 2026</span></header>
-<main><section class="intro"><div><span class="eyebrow">Collection 01 / Default</span><h1>As<br>Captured.</h1></div><div class="intro-copy"><strong>デフォルト写真</strong><p>その瞬間に写った光、距離、表情。<br>手を加えずに残した10枚。</p></div></section>
-<section class="featured" aria-label="Featured photograph"><div class="featured-stage"><button data-full="assets/default-09.webp" data-title="Looking Up — 09 Sep 2026"><img src="assets/default-09.webp" alt="こちらを見上げる金髪の人物" fetchpriority="high"></button></div><div class="featured-meta"><span>Looking Up</span><span>09 Sep 2026 · Featured</span></div></section>
-<section class="gallery"><div class="gallery-head"><h2>Default photographs</h2><span>09 more frames</span></div><div class="works">
-<figure><button class="work-button" data-full="assets/default-01.webp" data-title="Together — Archive"><img src="assets/default-01-thumb.webp" alt="笑顔で集まるVRChatの仲間たち" loading="lazy"></button><figcaption><span>Together</span><span>Archive</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-02.webp" data-title="Blue Dialogue — 01 Sep 2026"><img src="assets/default-02-thumb.webp" alt="青い光の階段で向き合う二人" loading="lazy"></button><figcaption><span>Blue Dialogue</span><span>01 Sep 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-03.webp" data-title="Winter Gaze — 03 Sep 2026"><img src="assets/default-03-thumb.webp" alt="青白い光の中の人物のクローズアップ" loading="lazy"></button><figcaption><span>Winter Gaze</span><span>03 Sep 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-04.webp" data-title="Soft Distance — 03 Sep 2026"><img src="assets/default-04-thumb.webp" alt="柔らかな青い光の人物" loading="lazy"></button><figcaption><span>Soft Distance</span><span>03 Sep 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-05.webp" data-title="Between Friends — 22 Aug 2026"><img src="assets/default-05-thumb.webp" alt="屋外で寄り添う二人" loading="lazy"></button><figcaption><span>Between Friends</span><span>22 Aug 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-06.webp" data-title="Three of Us — 26 Aug 2026"><img src="assets/default-06-thumb.webp" alt="カメラに向かう三人" loading="lazy"></button><figcaption><span>Three of Us</span><span>26 Aug 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-07.webp" data-title="Afternoon Rest — 28 Aug 2026"><img src="assets/default-07-thumb.webp" alt="室内でくつろぐ二人" loading="lazy"></button><figcaption><span>Afternoon Rest</span><span>28 Aug 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-08.webp" data-title="Signal Light — 12 Sep 2026"><img src="assets/default-08-thumb.webp" alt="赤と青の光に照らされた人物" loading="lazy"></button><figcaption><span>Signal Light</span><span>12 Sep 2026</span></figcaption></figure>
-<figure><button class="work-button" data-full="assets/default-10.webp" data-title="Morning Tea — 09 Sep 2026"><img src="assets/default-10-thumb.webp" alt="飲み物を手に微笑む人物" loading="lazy"></button><figcaption><span>Morning Tea</span><span>09 Sep 2026</span></figcaption></figure>
-</div></section></main><footer class="site-footer"><p class="footer-mark">non.ac</p><div class="footer-note">Virtual photography<br>© <span data-year></span></div></footer><dialog id="lightbox" aria-label="Photograph viewer"><div class="lightbox-inner"><img class="lightbox-img" alt=""></div><p class="lightbox-title"></p><button class="lightbox-close" type="button" aria-label="Close">×</button></dialog><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="description" content="non.ac — VRChat default photography collection.">
+  <title>Default photographs — non.ac</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body data-collection="default">
+  <header class="site-header"><a class="brand" href="index.html">non.ac</a><nav class="primary-nav" aria-label="Site navigation"><a href="index.html">About</a><a href="default.html" aria-current="page">Default</a><a href="edited.html">Edited</a></nav><span class="header-count">Default collection</span></header>
+  <main>
+    <section class="intro"><div><span class="eyebrow">Collection 01 / Default</span><h1>As<br>Captured.</h1></div><div class="intro-copy"><strong>デフォルト写真</strong><p>その瞬間に写った光、距離、表情。<br>手を加えずに残した写真。</p></div></section>
+    <section class="featured" aria-label="Featured photograph" data-featured></section>
+    <section class="tag-panel" aria-label="写真をタグで絞り込む"><div class="tag-panel-head"><strong>Filter by tag</strong><span class="tag-count" data-result-count></span></div><div class="tag-filters" data-tag-filters></div></section>
+    <section class="gallery"><div class="gallery-head"><h2>Default photographs</h2><span>Selected frames</span></div><div class="works" data-gallery></div></section>
+  </main>
+  <footer class="site-footer"><p class="footer-mark">non.ac</p><div class="footer-note">Virtual photography<br>© <span data-year></span></div></footer>
+  <dialog id="lightbox" aria-label="Photograph viewer"><div class="lightbox-inner"><img class="lightbox-img" alt=""></div><p class="lightbox-title"></p><button class="lightbox-close" type="button" aria-label="Close">×</button></dialog>
+  <script type="module" src="gallery.js"></script><script src="app.js"></script>
+</body>
+</html>

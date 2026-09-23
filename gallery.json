@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "items": [
+    {"id":"default-01","collection":"default","title":"Together","date":"Archive","tags":["グループ","笑顔","ポートレート"],"full":"assets/default-01.webp","thumb":"assets/default-01-thumb.webp","alt":"笑顔で集まるVRChatの仲間たち","featured":false},
+    {"id":"default-02","collection":"default","title":"Blue Dialogue","date":"01 Sep 2026","tags":["二人","青","ポートレート"],"full":"assets/default-02.webp","thumb":"assets/default-02-thumb.webp","alt":"青い光の階段で向き合う二人","featured":false},
+    {"id":"default-03","collection":"default","title":"Winter Gaze","date":"03 Sep 2026","tags":["青","クローズアップ","ポートレート"],"full":"assets/default-03.webp","thumb":"assets/default-03-thumb.webp","alt":"青白い光の中の人物のクローズアップ","featured":false},
+    {"id":"default-04","collection":"default","title":"Soft Distance","date":"03 Sep 2026","tags":["青","ポートレート"],"full":"assets/default-04.webp","thumb":"assets/default-04-thumb.webp","alt":"柔らかな青い光の人物","featured":false},
+    {"id":"default-05","collection":"default","title":"Between Friends","date":"22 Aug 2026","tags":["二人","屋外","ポートレート"],"full":"assets/default-05.webp","thumb":"assets/default-05-thumb.webp","alt":"屋外で寄り添う二人","featured":false},
+    {"id":"default-06","collection":"default","title":"Three of Us","date":"26 Aug 2026","tags":["グループ","ポートレート"],"full":"assets/default-06.webp","thumb":"assets/default-06-thumb.webp","alt":"カメラに向かう三人","featured":false},
+    {"id":"default-07","collection":"default","title":"Afternoon Rest","date":"28 Aug 2026","tags":["二人","室内"],"full":"assets/default-07.webp","thumb":"assets/default-07-thumb.webp","alt":"室内でくつろぐ二人","featured":false},
+    {"id":"default-08","collection":"default","title":"Signal Light","date":"12 Sep 2026","tags":["ネオン","ポートレート"],"full":"assets/default-08.webp","thumb":"assets/default-08-thumb.webp","alt":"赤と青の光に照らされた人物","featured":false},
+    {"id":"default-09","collection":"default","title":"Looking Up","date":"09 Sep 2026","tags":["クローズアップ","ポートレート","代表"],"full":"assets/default-09.webp","thumb":"assets/default-09-thumb.webp","alt":"こちらを見上げる金髪の人物","featured":true},
+    {"id":"default-10","collection":"default","title":"Morning Tea","date":"09 Sep 2026","tags":["室内","ポートレート"],"full":"assets/default-10.webp","thumb":"assets/default-10-thumb.webp","alt":"飲み物を手に微笑む人物","featured":false},
+    {"id":"edited-01","collection":"edited","title":"Chromatic Silence","date":"19 Sep 2026","tags":["クローズアップ","ポートレート","代表"],"full":"assets/edited-01.webp","thumb":"assets/edited-01-thumb.webp","alt":"白い髪と赤青の瞳を持つ人物のクローズアップ","featured":true},
+    {"id":"edited-02","collection":"edited","title":"Neon Bloom","date":"20 Sep 2026","tags":["ネオン","ピンク","ポートレート"],"full":"assets/edited-02.webp","thumb":"assets/edited-02-thumb.webp","alt":"桃色の光に包まれた人物","featured":false},
+    {"id":"edited-03","collection":"edited","title":"Meadow Recline","date":"29 Aug 2026","tags":["花","屋外","ポートレート"],"full":"assets/edited-03.webp","thumb":"assets/edited-03-thumb.webp","alt":"花のそばで横たわる白髪の人物","featured":false},
+    {"id":"edited-04","collection":"edited","title":"Tokyo Afterlight","date":"18 Aug 2026","tags":["夜景","東京","ポートレート"],"full":"assets/edited-04.webp","thumb":"assets/edited-04-thumb.webp","alt":"東京タワーを背景にした人物","featured":false},
+    {"id":"edited-05","collection":"edited","title":"Blue Summer","date":"14 Jul 2025","tags":["海","夏","ポートレート"],"full":"assets/edited-05.webp","thumb":"assets/edited-05-thumb.webp","alt":"青い海辺に立つ人物","featured":false},
+    {"id":"edited-06","collection":"edited","title":"Garden Pause","date":"06 Apr 2025","tags":["緑","屋外","ポートレート"],"full":"assets/edited-06.webp","thumb":"assets/edited-06-thumb.webp","alt":"緑を背景にした黒髪の人物","featured":false}
+  ]
+}
