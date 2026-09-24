@@ -10,7 +10,7 @@
       if(!profile||!Array.isArray(profile.fields))return;
       lead.textContent=typeof profile.lead==='string'?profile.lead:'';
       lead.hidden=!lead.textContent;
-      name.textContent=profile.displayName?'NAME — '+profile.displayName:'';
+      name.textContent=profile.displayName||'';
       name.hidden=!name.textContent;
       facts.replaceChildren();
       for(const field of profile.fields){
