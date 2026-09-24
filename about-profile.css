@@ -1,0 +1,7 @@
+.profile-details-section{padding:clamp(90px,10vw,150px) 0;border-top:1px solid var(--line)}
+.profile-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.profile-facts>div{min-height:230px;padding:clamp(24px,3vw,44px);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.profile-facts dt{display:grid;gap:14px;margin-bottom:28px;font:400 clamp(26px,3vw,42px)/1.15 Georgia,"Noto Sans JP",serif}
+.profile-facts dt span{color:var(--accent);font:700 10px/1.2 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.profile-facts dd{max-width:500px;margin:0;color:var(--muted);font-size:13px;line-height:1.95}
+@media(max-width:760px){.profile-facts{grid-template-columns:1fr}.profile-facts>div{min-height:0;padding:28px 22px}.profile-facts dt{margin-bottom:20px}}

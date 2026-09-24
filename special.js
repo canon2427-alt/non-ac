@@ -3,11 +3,12 @@ const viewer=document.querySelector('#special-viewer');
 const viewerImage=viewer.querySelector('img');
 const viewerCaption=viewer.querySelector('.figure-viewer-caption');
 let active=null,position=0;
+const titleFor=value=>{const title=String(value??'').trim();return /^untitled$/i.test(title)?'':title};
 
 function showPhoto(){
   const image=active.images[position];
   viewerImage.src=image.full;viewerImage.alt=image.alt||`${active.title||'Special'} ${position+1}`;
-  viewerCaption.textContent=`${active.title||'Untitled'} — ${position+1} / ${active.images.length}`;
+  viewerCaption.textContent=(active.title?active.title+' — ':'')+`${position+1} / ${active.images.length}`;
   viewer.querySelector('[data-step="-1"]').disabled=position===0;
   viewer.querySelector('[data-step="1"]').disabled=position===active.images.length-1;
 }
@@ -47,15 +48,17 @@ try{
   for(const [index,item] of special.entries()){
     const article=document.createElement('article');article.className='special-entry';
     const head=document.createElement('div');head.className='special-entry-head';
-    head.append(text('h2',item.title||'Untitled'),text('span',String(index+1).padStart(2,'0'),'entry-index'));
+    const title=titleFor(item.title);
+    if(title)head.append(text('h2',title));
+    head.append(text('span',String(index+1).padStart(2,'0'),'entry-index'));
     const body=document.createElement('div');body.className='special-entry-body';
     const images=Array.isArray(item.images)?item.images:[{full:item.full,thumb:item.thumb,alt:item.alt}];
     const grid=document.createElement('div');grid.className='special-photo-grid';grid.dataset.count=String(images.length);
     for(const [photoIndex,image] of images.entries()){
       const photo=document.createElement('button');photo.type='button';photo.className='special-photo';
-      photo.setAttribute('aria-label',`${item.title||'Special'}の写真${photoIndex+1}を拡大`);
-      const thumbnail=document.createElement('img');thumbnail.src=image.thumb;thumbnail.alt=image.alt||item.title||'Special photograph';thumbnail.loading='lazy';photo.append(thumbnail);
-      photo.addEventListener('click',()=>{active={title:item.title,images};position=photoIndex;showPhoto();viewer.showModal()});
+      photo.setAttribute('aria-label',`${title||'Special'}の写真${photoIndex+1}を拡大`);
+      const thumbnail=document.createElement('img');thumbnail.src=image.thumb;thumbnail.alt=image.alt||title||'Special photograph';thumbnail.loading='lazy';photo.append(thumbnail);
+      photo.addEventListener('click',()=>{active={title,images};position=photoIndex;showPhoto();viewer.showModal()});
       grid.append(photo);
     }
     const source=document.createElement('aside');source.className='special-source';source.append(text('span','Original post / X','special-source-label'));
