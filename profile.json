@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "displayName": "",
-  "lead": "VRChatで過ごした時間と、そこで見つけた光を残しています。",
+  "displayName": "きゃのん",
+  "lead": "",
   "fields": [
     {
       "label": "概要",
-      "value": "VRChatで撮影した写真と、アバターの記録をまとめています。詳しい自己紹介は後ほど追加します。"
+      "value": "MBTI - INFP-A（仲介者）\n未改変アバターでの写真撮影が好きです\nCreality K1 MAX 3Dプリンターを使用してフィギュアの作成をしたりもします\nVRChatフレンド申請などもお気軽にどうぞ"
     },
     {
       "label": "好き",
-      "value": "後ほど追加します。"
+      "value": "VRChat / 写真撮影 / V睡 / 釣り / デュエル・マスターズ プレイス / 3Dプリンターでフィギュア作成"
     },
     {
       "label": "嫌い",
-      "value": "後ほど追加します。"
+      "value": "建前"
     },
     {
-      "label": "活動",
-      "value": "VRChat / 写真撮影"
+      "label": "環境",
+      "value": "CPU：Ryzen 9 9950X3D\nGPU：RTX4080S\nVR：VIVE Pro＋VIVE Tracker3․0×5＋ContactGrove（2）"
     }
   ]
 }
