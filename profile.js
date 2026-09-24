@@ -2,7 +2,7 @@
   const lead=document.querySelector('[data-profile-lead]');
   const facts=document.querySelector('[data-profile-facts]');
   if(!lead||!facts)return;
-  const multiline=value=>typeof value==='string'?value.replace(/<br\s*\/?\s*>/gi,'\n'):'';
+  const multiline=value=>typeof value==='string'?value.replace(/\r?\n[ \t]*<br\s*\/?\s*>/gi,'\n').replace(/<br\s*\/?\s*>/gi,'\n'):'';
   fetch('profile.json',{cache:'no-store'})
     .then(response=>{if(!response.ok)throw new Error('Profile unavailable');return response.json()})
     .then(profile=>{
