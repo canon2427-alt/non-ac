@@ -45,12 +45,11 @@ try{
   const special=items.filter(item=>item.collection==='special');
   root.replaceChildren();
   if(!special.length)root.append(text('p','写真はまだありません。','gallery-empty'));
-  for(const [index,item] of special.entries()){
+  for(const item of special){
     const article=document.createElement('article');article.className='special-entry';
     const head=document.createElement('div');head.className='special-entry-head';
     const title=titleFor(item.title);
     if(title)head.append(text('h2',title));
-    head.append(text('span',String(index+1).padStart(2,'0'),'entry-index'));
     const body=document.createElement('div');body.className='special-entry-body';
     const images=Array.isArray(item.images)?item.images:[{full:item.full,thumb:item.thumb,alt:item.alt}];
     const grid=document.createElement('div');grid.className='special-photo-grid';grid.dataset.count=String(images.length);
@@ -61,14 +60,14 @@ try{
       photo.addEventListener('click',()=>{active={title,images};position=photoIndex;showPhoto();viewer.showModal()});
       grid.append(photo);
     }
-    const source=document.createElement('aside');source.className='special-source';source.append(text('span','Original post / X','special-source-label'));
+    const source=document.createElement('aside');source.className='special-source';
     const url=sourceUrl(item.sourceUrl);
     if(url){
       const quote=document.createElement('blockquote');quote.className='twitter-tweet';quote.dataset.theme='dark';
       const anchor=document.createElement('a');anchor.href=url;anchor.textContent='Xの引用元ポストを見る';quote.append(anchor);source.append(quote);
       const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.className='special-source-link';link.textContent='元のポストを開く ↗';source.append(link);
     }else source.append(text('p','引用元ポストは確認できません。'));
-    body.append(grid,source);article.append(head,body);
+    body.append(grid,source);if(title)article.append(head);article.append(body);
     if(item.tags?.length){const tags=document.createElement('div');tags.className='entry-tags';for(const tag of item.tags)tags.append(text('span',`#${tag}`));article.append(tags)}
     root.append(article);
   }

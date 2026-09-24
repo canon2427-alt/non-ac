@@ -31,17 +31,16 @@ try{
   const groups=items.filter(item=>item.collection==='figure'&&Array.isArray(item.images)&&item.images.length);
   root.replaceChildren();
   if(!groups.length)root.append(text('p','作品はまだありません。','gallery-empty'));
-  for(const [index,item] of groups.entries()){
+  for(const item of groups){
     const article=document.createElement('article');article.className='figure-entry';
     const head=document.createElement('div');head.className='figure-entry-head';
     const title=titleFor(item.title);
     if(title)head.append(text('h2',title));
-    head.append(text('span',String(index+1).padStart(2,'0'),'entry-index'));
     const cover=document.createElement('button');cover.type='button';cover.className='figure-cover';cover.setAttribute('aria-label',`${title||'Figure'}、${item.images.length}枚の写真を開く`);
     for(const image of item.images.slice(0,3)){const img=document.createElement('img');img.src=image.thumb;img.alt=image.alt||title||'Figure photograph';img.loading='lazy';cover.append(img)}
     cover.append(text('span',`${item.images.length} photographs / View series`));
     cover.addEventListener('click',()=>{active={...item,title};position=0;show();dialog.showModal()});
-    article.append(head,cover);
+    if(title)article.append(head);article.append(cover);
     if(item.tags?.length){const tags=document.createElement('div');tags.className='entry-tags';for(const tag of item.tags)tags.append(text('span',`#${tag}`));article.append(tags)}
     root.append(article);
   }
