@@ -1,7 +1,11 @@
 {
   "version": 1,
-  "lead": "MBTI - INFP-A（仲介者）\n<br>未改変アバターでの写真撮影が好きです\n<br>Creality K1 MAX 3Dプリンターを使用してフィギュアの作成をしたりもします\n<br>VRChatフレンド申請などもお気軽にどうぞ",
+  "lead": "",
   "fields": [
+    {
+      "label": "About me",
+      "value": "MBTI - INFP-A（仲介者）\n<br>未改変アバターでの写真撮影が好きです\n<br>Creality K1 MAX 3Dプリンターを使用してフィギュアの作成をしたりもします\n<br>VRChatフレンド申請などもお気軽にどうぞ"
+    },
     {
       "label": "好き",
       "value": "VRChat / 写真撮影 / V睡 / 釣り / デュエル・マスターズ プレイス / <br>3Dプリンターでフィギュア作成"
